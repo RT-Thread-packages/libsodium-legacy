@@ -30,6 +30,7 @@ int libsodium_hash_test(void)
 {
     size_t i;
 
+    // SHA512
     crypto_hash(h, x, sizeof x - 1U);
     printf("\nsha512(\"testing\\n\") = ");
     for (i = 0; i < crypto_hash_BYTES; ++i) {
@@ -46,6 +47,7 @@ int libsodium_hash_test(void)
     }
     printf("\n");
 
+    // SHA256
     crypto_hash_sha256(h, x, sizeof(x) - 1U);
     printf("\nsha256(\"testing\\n\") = ");
     for (i = 0; i < crypto_hash_sha256_BYTES; ++i) {

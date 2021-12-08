@@ -13,8 +13,28 @@ for root, dirs, files in os.walk(cwd + '/libsodium'):
     if file.endswith('.c'):
       src.append(os.path.join(root, file))
 
+# Examples
 if GetDepend('LIBSODIUM_USING_EXAMPLE_SHA256'):
     src    += Glob('examples/sha256.c')
+
+if GetDepend('LIBSODIUM_USING_EXAMPLE_SHA512'):
+    src    += Glob('examples/sha512.c')
+
+if GetDepend('LIBSODIUM_USING_EXAMPLE_GENERIC_HASH'):
+    src    += Glob('examples/generic_hash.c')
+
+if GetDepend('LIBSODIUM_USING_EXAMPLE_SHORT_HASH'):
+    src    += Glob('examples/short_hash.c')
+
+# Testing
+if GetDepend('LIBSODIUM_USING_TESTING_CORE'):
+    src    += Glob('test/default/core1.c')
+
+if GetDepend('LIBSODIUM_USING_TESTING_GENERIC_HASH'):
+    src    += Glob('test/default/generichash.c')
+
+if GetDepend('LIBSODIUM_USING_TESTING_SHORT_HASH'):
+    src    += Glob('test/default/shorthash.c')
 
 if GetDepend('LIBSODIUM_USING_TESTING_HASH'):
     src    += Glob('test/default/hash.c')
