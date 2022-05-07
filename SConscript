@@ -47,7 +47,7 @@ path   += [cwd + '/libsodium/include/sodium/private']
 LOCAL_CCFLAGS = ''
 
 if rtconfig.CROSS_TOOL == 'gcc':
-    LOCAL_CCFLAGS += ' -Wno-unknown-pragmas -Wno-unused-function'
+    LOCAL_CCFLAGS += ' -Wno-unknown-pragmas -Wno-unused-function -Wno-deprecated-declarations -Wno-unused-variable'
 
 group = DefineGroup('libsodium', src, depend = ['PKG_USING_LIBSODIUM'], CPPPATH = path, CPPDEFINES=['CONFIGURED=1'], LOCAL_CCFLAGS = LOCAL_CCFLAGS)
 
