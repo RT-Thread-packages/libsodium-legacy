@@ -1,3 +1,8 @@
+> Please note that using libsodium on ARM Cortex M0, M3, and M4 CPUs is untested and not recommended if side-channels are a concern.
+
+**不推荐在 MCU 上使用 libsodium，请使用 libhydrogen 替代**.
+
+
 ![libsodium](https://raw.github.com/jedisct1/libsodium/master/logo.png)
 ============
 
